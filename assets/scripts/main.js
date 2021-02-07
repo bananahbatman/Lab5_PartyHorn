@@ -1,6 +1,15 @@
 
 document.getElementById("volume-slider").addEventListener("change", function(){
     document.getElementById("volume-number").value = document.getElementById("volume-slider").value;
+    
+    if(document.getElementById("volume-number").valueAsNumber == 0)
+    {
+        document.getElementById("Honk-Btn").disabled = true;
+    }
+    else
+    {
+        document.getElementById("Honk-Btn").disabled = false;
+    }
 
     document.getElementById("horn-sound").volume = document.getElementById("volume-number").valueAsNumber / 100;
     if (document.getElementById("volume-slider").valueAsNumber > 66)
@@ -26,6 +35,15 @@ document.getElementById("volume-slider").addEventListener("change", function(){
 
 document.getElementById("volume-number").addEventListener("input", function(){
     document.getElementById("volume-slider").value = document.getElementById("volume-number").value;
+    
+    if(document.getElementById("volume-number").valueAsNumber == 0)
+    {
+        document.getElementById("Honk-Btn").disabled = true;
+    }
+    else
+    {
+        document.getElementById("Honk-Btn").disabled = false;
+    }
 
     document.getElementById("horn-sound").volume = document.getElementById("volume-number").valueAsNumber / 100;
     if (document.getElementById("volume-slider").valueAsNumber > 66)
