@@ -7,7 +7,7 @@ on:
   
 jobs:
   comment:
-    if: github.event_name =='pull_request' || github.event_ame == 'issues'
+    if: github.event_name == 'issues'
     runs-on: ubuntu-latest
     steps:
       - name: Add funny comment
